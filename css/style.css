@@ -2,6 +2,7 @@ body {
   font-family: "Raleway", sans-serif;
   color: #213053;
   margin: 0;
+  overflow-x: hidden;
 }
 
 header {
@@ -9,6 +10,10 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  position: sticky;
+  background-color: white;
+  top: 0;
+  z-index: 1;
 }
 
 a {
@@ -60,6 +65,18 @@ button:hover {
 .about__sun-image {
   width: 100px;
   height: 100px;
+  animation: rotation 10s linear infinite;
+  position: absolute;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .about h1 {
@@ -145,38 +162,108 @@ input {
   outline: none;
 }
 
-
-footer{
+footer {
   padding: 90px 20px;
   font-size: 16px;
   font-weight: 600;
 }
 
-.footer__container{
+.footer__container {
   display: flex;
   justify-content: center;
 }
 
-.footer__copyright{
+.footer__copyright {
   margin-top: 40px;
   text-align: center;
   opacity: 0.5;
 }
 
-.footer__group{
+.footer__group {
   margin-right: 80px;
 }
 
-.footer__group h3{
+.footer__group h3 {
   font-size: 16px;
   opacity: 0.7;
   margin-bottom: 30px;
 }
 
-.footer__links{
+.footer__links {
   display: flex;
   flex-direction: column;
 }
-.footer__links a{
+.footer__links a {
   margin-bottom: 15px;
+}
+
+/* Планшеты */
+@media (max-width: 1024px) {
+  .about {
+    padding: 115px 20px;
+  }
+
+  .about h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .about__image {
+    width: 280px;
+  }
+
+  .about__sun-image {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+/* Мобильные устройства */
+@media (max-width: 720px) {
+  header {
+    padding: 10px;
+  }
+
+  .header__logo {
+    height: 20px;
+  }
+
+  header a {
+    margin-right: 10px;
+  }
+
+  .about {
+    flex-direction: column-reverse;
+    padding: 50px 10px;
+  }
+
+  .about h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .about__image {
+    width: 280px;
+  }
+
+  .about__sun-image {
+    width: 75px;
+    height: 75px;
+  }
+
+  .form {
+    padding: 50px 10px;
+  }
+
+  .form h1 {
+    font-size: 36px;
+  }
+
+  footer {
+    padding: 50px 10px;
+  }
+
+  .footer__container {
+    flex-direction: column;
+  }
 }
