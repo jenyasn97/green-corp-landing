@@ -1,3 +1,4 @@
+
 body {
   font-family: "Raleway", sans-serif;
   color: #213053;
@@ -10,12 +11,18 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  position: sticky;
-  background-color: white;
+  position: fixed;
+  background: none;
+  left: 0;
+  right: 0;
   top: 0;
   z-index: 1;
+  transition: box-shadow, background-color .25s ease;
 }
-
+.header__scrolled {
+  background-color: #fff;
+  box-shadow: 0 12px 34px -11px rgb(65 62 101 / 10%);
+}
 a {
   text-decoration: none;
   color: #213053;
@@ -53,10 +60,11 @@ button:hover {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 115px 0;
+  padding: 115px 0 115px;
   background: url("../img/back.png") no-repeat;
   background-position: center;
   background-size: cover;
+  padding-top: 200px;
 }
 .orb-canvas {
   position: absolute;
